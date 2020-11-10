@@ -1,0 +1,33 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package buoi2;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author PKrew
+ */
+public class Bai1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        float a,b;
+        Scanner ip = new Scanner(System.in);
+        a=ip.nextFloat();
+        b=ip.nextFloat();
+        if(a*b>0){
+            System.out.println("Cung dau");
+        }
+        else{
+            System.out.println("Trai dau");
+        }
+    }
+    
+}
