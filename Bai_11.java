@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package buoi2;
+package buoi3;
 
 import java.util.Scanner;
 
@@ -18,35 +18,21 @@ public class Bai_11 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        double a,b,c;
-        Scanner ip = new Scanner(System.in);
-        a=ip.nextDouble();
-        b=ip.nextDouble();
-        c=ip.nextDouble();
+        int n = new Scanner(System.in).nextInt();
+        boolean laSNT = true;
         
-        if(a==0){
-            if(b==0&&c==0){
-                System.out.println("Phuong trinh co vo so nghiem!");
-            }
-            else if(b==0&&c!=0){
-                System.out.println("Phuong trinh vo nghiem!");
-            }
-            else{
-                System.out.println("Phuong trinh co nghiem x= "+(-c/b));
-            }
-        }else{
-            double delta=b*b-4*a*c;
-            if(delta>0){
-                double x1= (-b+Math.sqrt(delta))/(2*a);
-                double x2= (-b-Math.sqrt(delta))/(2*a);
-                System.out.println("Phuong trinh co hai nghiem phan biet: x1= "+x1+"  x2= "+x2);
-            }else if(delta<0){
-                System.out.println("Phuong trinh vo nghiem!");               
-            }
-            else{
-                System.out.println("Phuong trinh co nghiem duy nhat x= "+(-b/(2*a)));
+        for (int i = 2; i < n; ++i) {
+            if (n % i == 0) {
+                laSNT = false;
+                break;
             }
         }
+
+        if (laSNT&&n!=1) {
+            System.out.println(n + " la so nguyen to.");
+        } else {
+            System.out.println(n + " khong la so nguyen to.");
+        }
     }
-    
+
 }

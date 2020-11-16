@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author PKrew
  */
-public class Bai_20 {
+public class Bai_21 {
 
     /**
      * @param args the command line arguments
@@ -21,12 +21,18 @@ public class Bai_20 {
         int n = new Scanner(System.in).nextInt();
         
         for(int i=n;i>=1;--i){
+            int dem=1;
+            int tangDem=1;
             for(int j=1;j<=2*n-i;++j){
                 if(j<i){
-                    System.out.print("  ");
+                    System.out.printf("%3s","");
                 }
                 else{
-                    System.out.print("* ");
+                    System.out.printf("%3d",dem);
+                    if(dem==n+1-i){
+                        tangDem=-1;
+                    }
+                    dem+=tangDem;
                 }
             }
             System.out.println("");

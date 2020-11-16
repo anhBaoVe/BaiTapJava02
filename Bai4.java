@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package buoi2;
+package buoi3;
 
 import java.util.Scanner;
 
@@ -18,23 +18,14 @@ public class Bai4 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int a,b,c;
-        Scanner ip = new Scanner(System.in);
-        a= ip.nextInt();
-        b= ip.nextInt();
-        c= ip.nextInt();
+        int n= new Scanner(System.in).nextInt();
+        int dem=0;
+        while(n>0){
+            dem++;
+            n/=10;
+        }
         
-        if(a>b&&a>c){
-            System.out.printf("Max{%d,%d,%d}=%d",a,b,c,a);
-        }
-        else if(b>a&&b>c){
-            System.out.printf("Max{%d,%d,%d}=%d",a,b,c,b);
-        }
-        else{
-            System.out.printf("Max{%d,%d,%d}=%d",a,b,c,c);
-
-        }
-        System.out.println("");
+        System.out.println(dem);
     }
     
 }

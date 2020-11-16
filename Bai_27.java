@@ -11,28 +11,26 @@ import java.util.Scanner;
  *
  * @author PKrew
  */
-public class Bai6 {
+public class Bai_27 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int am, duong, a;
-        Scanner ip = new Scanner(System.in);
-        am = duong = 0;
-        do {
-            a = ip.nextInt();
-            if (a > 0) {
-                duong++;
-            } else if (a < 0) {
-                am++;
+        int n = new Scanner(System.in).nextInt();
+        while(n>1){
+            for(int i=2;;++i){
+                if(n%i==0){
+                    n/=i;
+                    if(n%i!=0){
+                        System.out.print(i+" ");
+                    }
+                    break;
+                }
             }
-
-        } while (a != 0);
-
-        System.out.println("AM: " + am);
-        System.out.println("DUONG: " + duong);
+        }
+        System.out.println("");
     }
-
+    
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package buoi2;
+package buoi3;
 
 import java.util.Scanner;
 
@@ -18,19 +18,13 @@ public class Bai_17 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int so[]= new int[5];
-        Scanner ip = new Scanner(System.in);
-        for(int i=0;i<4;++i){
-            so[i]=ip.nextInt();
+        String nhiPhan = new Scanner(System.in).nextLine();
+        int thapPhan=0;
+        int mu=0;
+        for(int i=nhiPhan.length()-1;i>=0;--i){
+            thapPhan+=((nhiPhan.charAt(i)-'0'))*Math.pow(2, mu++);
         }
-        for(int i=0;i<4;++i){
-            if(so[i]%2!=0){
-                System.out.printf("Trong Thuy di duoc %dkm va khong duoi kip My Chau\n",i*10);
-                System.exit(0);
-            }
-        }
-        System.out.printf("Trong Thuy di duoc %dkm va duoi kip My Chau\n",50);
-        
+        System.out.println(thapPhan);
     }
     
 }

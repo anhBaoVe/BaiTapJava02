@@ -3,9 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package buoi2;
-
-import java.util.Scanner;
+package buoi3;
 
 /**
  *
@@ -18,53 +16,41 @@ public class Bai9 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int d,m,y;
-        int limit=-1;
-        Scanner ip = new Scanner(System.in);
-        d=ip.nextInt();
-        m=ip.nextInt();
-        y=ip.nextInt();
-        
-        if(y>0){
-            switch(m){
-                case 2:
-                    if(y%4==0&&y%100!=0)
-                    {
-                        limit=29;
-                    }
-                    else
-                    {
-                        limit=28;
-                    }
+        //cách 1
+        for (int i = 20000; i < 90000; i += 2) {
+            int tmp = i;
+            boolean toanChan = true;
+            while (tmp > 0) {
+                if (tmp % 10 % 2 != 0) {
+                    toanChan = false;
                     break;
-                
-                case 1 : case 3: case 5: case 7:case 8: case 10: case 12:
-                    limit=31;
-                    break;
-                
-                case 4: case 6: case 9: case 11:
-                    limit=30;
-                    break;
+                }
+                tmp /= 10;
             }
-        }
-        
-        if(d>0&&d<limit){
-            System.out.printf("Ngay ke tiep la: %s%d/%s%d/%d\n",(d>9)?"":"0",d+1,(m>9)?"":"0",m,y);
-        }
-        else if(d>0&&d==limit){
-            d=1;
-            if(m<12){
-                m++;
-            }else{
-                m=1;
-                y++;
-            }
-            System.out.printf("Ngay ke tiep la: %s%d/%s%d/%d\n",(d>9)?"":"0",d,(m>9)?"":"0",m,y);
 
+            if (toanChan) {
+                System.out.print(i + " ");
+            }
         }
-        else{
-            System.out.println("Ngay nhap khong hop le!");
+        System.out.println("\n");
+        //cách 2
+        int soChan[] = {0, 2, 4, 6, 8};
+        for (int i = 1; i < 5; ++i) {
+            for (int j = 0; j < 5; ++j) {
+                for (int k = 0; k < 5; ++k) {
+                    for (int m = 0; m < 5; ++m) {
+                        for (int n = 0; n < 5; ++n) {
+                            System.out.print(soChan[i]);
+                            System.out.print(soChan[j]);
+                            System.out.print(soChan[k]);
+                            System.out.print(soChan[m]);
+                            System.out.print(soChan[n] + " ");
+                        }
+                    }
+                }
+            }
         }
+
     }
-    
+
 }

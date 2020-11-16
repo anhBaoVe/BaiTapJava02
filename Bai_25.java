@@ -11,30 +11,31 @@ import java.util.Scanner;
  *
  * @author PKrew
  */
-public class Bai_12 {
+public class Bai_25 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int a, b;
-        Scanner ip = new Scanner(System.in);
-        a = ip.nextInt();
-        b = ip.nextInt();
+        int n = new Scanner(System.in).nextInt();
 
-        for (int i = a; i <= b; ++i) {
-            boolean laSNT = true;
-            for (int j = 2; j < i; ++j) {
-                if (i % j == 0) {
-                    laSNT = false;
-                    break;
-                }
-            }
-            if (laSNT && i > 1) {
-                System.out.print(i + " ");
+        for(int i=2;i<=n/2;++i){
+            if(laSNT(i)&&laSNT(n-i)){
+                System.out.printf("%d = %d + %d\n",n,i,n-i);
             }
         }
     }
-
+    public static boolean laSNT(int a){
+        if(a<2){
+            return false;
+        }
+        for(int i=2;i<a;++i){
+            if(a%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+    
 }

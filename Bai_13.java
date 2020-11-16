@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package buoi2;
+package buoi3;
 
 import java.util.Scanner;
 
@@ -18,34 +18,46 @@ public class Bai_13 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        double a,b,c;
+        int d,c;
         Scanner ip = new Scanner(System.in);
-        a=ip.nextDouble();
-        b=ip.nextDouble();
-        c=ip.nextDouble();
-        
-        if(a<b+c&&b<a+c&&c<b+a){
-            if(a==b&&b==c){
-            System.out.printf("{%.2f,%.2f,%.2f} La tam giac deu",a,b,c);                
+        d = ip.nextInt();
+        c = ip.nextInt();
+        //đặc
+        for(int i=0;i<d;++i){
+            for(int j=0;j<c;++j){
+                System.out.print("* ");
             }
-            else if((a==b||b==c||c==a)&&(a*a+b*b==c*c||b*b+c*c==a*a||a*a+c*c==b*b)){
-            System.out.printf("{%.2f,%.2f,%.2f} La tam giac vuong can",a,b,c);                                
-            }
-            else if(a==b||b==c||c==a){
-            System.out.printf("{%.2f,%.2f,%.2f} La tam giac can",a,b,c);                
-            }
-            else if(a*a+b*b==c*c||b*b+c*c==a*a||a*a+c*c==b*b){
-            System.out.printf("{%.2f,%.2f,%.2f} La tam giac vuong",a,b,c);                
-            }
-            else{
-                System.out.printf("{%.2f,%.2f,%.2f} La tam giac thuong",a,b,c);
-            }
-            
+            System.out.println("");
         }
-        else{
-            System.out.printf("{%.2f,%.2f,%.2f} Khong phai tam giac",a,b,c);
+        //rỗng
+        System.out.println("\n");
+        for(int i=0;i<d;++i){
+            for(int j=0;j<c;++j){
+                if(i==0||i==d-1||j==0||j==c-1){
+                    System.out.print("* ");
+                }
+                else{
+                    System.out.print("  ");
+                }
+            }
+            System.out.println("");
         }
-        System.out.println("");
+        System.out.println("\n");
+        //trên dòng
+        for(int i=1;i<=d;++i){
+            for(int j=1;j<=2*c;++j){
+                if(i==1||i==d||j<=c+1||j==2*c){
+                    System.out.print("* ");
+                }
+                else{
+                    System.out.print("  ");
+                }
+                if(j==c){
+                    System.out.print("\t\t");
+                }
+            }
+            System.out.println("");
+        }
     }
     
 }

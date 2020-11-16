@@ -11,28 +11,24 @@ import java.util.Scanner;
  *
  * @author PKrew
  */
-public class Bai6 {
+public class Bai_29 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int am, duong, a;
-        Scanner ip = new Scanner(System.in);
-        am = duong = 0;
-        do {
-            a = ip.nextInt();
-            if (a > 0) {
-                duong++;
-            } else if (a < 0) {
-                am++;
+        long tien= new Scanner(System.in).nextLong();
+        
+        for(int i = 0;i<=tien/10000;++i){
+            for(int j=0;j<=tien/20000;++j){
+                for(int k = 0;k<=tien/50000;++k){
+                    if(i*10000+j*20000+k*50000==tien){
+                        System.out.printf("%4d to 10000, %4d to 20000, %4d to 50000\n",i,j,k);
+                    }
+                }
             }
-
-        } while (a != 0);
-
-        System.out.println("AM: " + am);
-        System.out.println("DUONG: " + duong);
+        }
     }
-
+    
 }

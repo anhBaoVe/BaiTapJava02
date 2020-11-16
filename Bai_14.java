@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package buoi2;
+package buoi3;
 
 import java.util.Scanner;
 
@@ -18,21 +18,25 @@ public class Bai_14 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int x1,x2,y1,y2;
-        Scanner ip = new Scanner(System.in);
-        do{
-            x1=ip.nextInt();
-            y1=ip.nextInt();
-            x2=ip.nextInt();
-            y2=ip.nextInt();
-        }while((x1==x2&&y1==y1)||x1<1||x1>8||y1<1||y1>8||x2<1||x2>8||y2<1||y2>8);
+        int n = new Scanner(System.in).nextInt();
         
-        
-        if(x1==x2||y1==y2){
-            System.out.printf("Xe 1 (%d,%d) xe 2 (%d,%d) co the an nhau.",x1,y1,x2,y2);
+        for(int i=n;i>=1;--i){
+            for(int j=1;j<=i;++j){
+                System.out.print("* ");
+            }
+            System.out.println("");
         }
-        else{
-            System.out.printf("Xe 1 (%d,%d) xe 2 (%d,%d) khong the an nhau.",x1,y1,x2,y2);            
+        System.out.println("\n");
+        for(int i=n;i>=1;--i){
+            for(int j=1;j<=i;++j){
+                if(i==n||j==1||i==j){  
+                System.out.print("* ");
+                }
+                else{
+                    System.out.print("  ");
+                }
+            }
+            System.out.println("");
         }
     }
     

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package buoi2;
+package buoi3;
 
 import java.util.Scanner;
 
@@ -18,16 +18,24 @@ public class Bai1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        float a,b;
-        Scanner ip = new Scanner(System.in);
-        a=ip.nextFloat();
-        b=ip.nextFloat();
-        if(a*b>0){
-            System.out.println("Cung dau");
+        int n= new Scanner(System.in).nextInt();
+        int m =new Scanner(System.in).nextInt(); 
+        while(n>0){
+            System.out.print("*");
+            n--;
         }
-        else{
-            System.out.println("Trai dau");
+        System.out.println("");
+        while(m>0){
+            if(m%2==0){
+                System.out.print("+");
+            }
+            else{
+                System.out.print("-");
+            }
+            m--;
         }
+        
+        
     }
     
 }
