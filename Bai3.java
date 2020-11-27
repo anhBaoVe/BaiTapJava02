@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package buoi2;
+package buoi4;
 
 import java.util.Scanner;
 
@@ -18,19 +18,25 @@ public class Bai3 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        float a,b;
+        int n;
         Scanner ip = new Scanner(System.in);
-        a=ip.nextFloat();
-        b=ip.nextFloat();
-        if(a==b){
-            System.out.println("a=b");
+        n = ip.nextInt();
+        int[] a = new int [n];
+        
+        for(int i=0;i<n;++i){
+            a[i]= ip.nextInt();
         }
-        else if(a>b){
-            System.out.println("a>b");
+        
+        int min=a[0],max=a[0];
+        for(int i=1;i<n;++i){
+            if(a[i]>max){
+                max=a[i];
+            }
+            if(a[i]<min){
+                min=a[i];
+            }
         }
-        else{
-            System.out.println("a<b");
-        }
+        System.out.println("Max = "+max+"\nMin = "+min);
     }
     
 }

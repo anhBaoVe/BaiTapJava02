@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package buoi2;
+package buoi4;
 
 import java.util.Scanner;
+
 /**
  *
  * @author PKrew
@@ -17,42 +18,32 @@ public class Bai8 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int d,m,y;
-        int limit=-1;
+        int n;
         Scanner ip = new Scanner(System.in);
-        d=ip.nextInt();
-        m=ip.nextInt();
-        y=ip.nextInt();
+        n = ip.nextInt();
+        int[] a = new int [n];
         
-        if(y>0){
-            switch(m){
-                case 2:
-                    if(y%4==0&&y%100!=0)
-                    {
-                        limit=29;
-                    }
-                    else
-                    {
-                        limit=28;
-                    }
-                    break;
-                
-                case 1 : case 3: case 5: case 7:case 8: case 10: case 12:
-                    limit=31;
-                    break;
-                
-                case 4: case 6: case 9: case 11:
-                    limit=30;
-                    break;
+        for(int i=0;i<n;++i){
+            a[i]= ip.nextInt();
+        }
+        
+        int dem = 0;
+        for (int i : a) {
+            if(isSNT(i)){
+                dem++;
             }
         }
-        if(d>0&&d<=limit){
-            System.out.printf("%s%d/%s%d/%d\tHop Le!\n",(d>9)?"":"0",d,(m>9)?"":"0",m,y);
-        }
-        else{
-            System.out.println("Khong hop le!");
-        }
+        System.out.println("Co "+ dem +" so nguyen to.");
         
+    }
+    
+    public static boolean isSNT(int a){
+        for(int i=2;i<a;++i){
+            if(a%i==0){
+                return false;
+            }
+        }
+        return true;
     }
     
 }

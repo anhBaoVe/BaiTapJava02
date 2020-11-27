@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author PKrew
  */
-public class Bai7 {
+public class bai1 {
 
     /**
      * @param args the command line arguments
@@ -27,24 +27,11 @@ public class Bai7 {
             a[i]= ip.nextInt();
         }
         
-        int bc=BCNN(a[0], a[1]);
-        for(int i=2;i<n;++i){
-            bc=BCNN(bc, a[i]);
-        }
-        
-        System.out.println("BCNN cua cac phan tu trong mang: "+bc);
-    }
-    public static int BCNN(int a,int b){
-        int tmp = a*b;
-        while(a!=b){
-            if(a>b){
-                a-=b;
-            }
-            else{
-                b-=a;
+        for(int i=0;i<n;++i){
+            if(a[i]%2==0&&a[i]<100&&a[i]>9){
+                System.out.print(a[i]+ "  ");
             }
         }
-        return tmp/a;
     }
     
 }

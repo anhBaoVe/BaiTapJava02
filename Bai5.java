@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package buoi2;
+package buoi4;
 
 import java.util.Scanner;
 
@@ -18,32 +18,26 @@ public class Bai5 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int a;
-        a = new Scanner(System.in).nextInt();
-        switch(a){
-            case 2: 
-                System.out.println("Thu Hai");
-                break;
-            case 3: 
-                System.out.println("Thu Ba");
-                break;
-            case 4: 
-                System.out.println("Thu Tu");
-                break;
-            case 5: 
-                System.out.println("Thu Nam");
-                break;
-            case 6: 
-                System.out.println("Thu Sau");
-                break;
-            case 7: 
-                System.out.println("Thu Bay");
-                break;
-            case 8: 
-                System.out.println("Chu Nhat");
-                break;
-            default: 
-                System.out.println("Khong hop le!");
+        int n;
+        Scanner ip = new Scanner(System.in);
+        n = ip.nextInt();
+        int[] a = new int [n];
+        
+        for(int i=0;i<n;++i){
+            a[i]= ip.nextInt();
+        }
+        
+        int min=a[0];
+        for(int i=1;i<n;++i){
+            if(a[i]<min){
+                min=a[i];
+            }
+        }
+        System.out.print("Cac vi tri phan tu co gia tri bang min: ");
+        for(int i=0;i<n;++i){
+            if(a[i]==min){
+            System.out.print(i+" ");                
+            }
         }
     }
     
